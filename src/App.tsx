@@ -1,5 +1,5 @@
 
-import { Toaster as DefaultToaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/toaster";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -14,14 +14,15 @@ import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 import { AnimatePresence } from "framer-motion";
 
+// Create a client
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
+  <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
       <CartProvider>
         <TooltipProvider>
-          <DefaultToaster />
+          <Toaster />
           <SonnerToaster />
           <Navbar />
           <AnimatePresence mode="wait">
@@ -36,8 +37,8 @@ const App = () => (
           <Footer />
         </TooltipProvider>
       </CartProvider>
-    </BrowserRouter>
-  </QueryClientProvider>
+    </QueryClientProvider>
+  </BrowserRouter>
 );
 
 export default App;
