@@ -17,8 +17,8 @@ import { AnimatePresence } from "framer-motion";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
+  <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
       <CartProvider>
         <TooltipProvider>
           <DefaultToaster />
@@ -36,8 +36,8 @@ const App = () => (
           <Footer />
         </TooltipProvider>
       </CartProvider>
-    </BrowserRouter>
-  </QueryClientProvider>
+    </QueryClientProvider>
+  </BrowserRouter>
 );
 
 export default App;
